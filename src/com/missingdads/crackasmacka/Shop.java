@@ -31,13 +31,13 @@ public class Shop extends Canvas {
 	public void tick() {
 		if (Core.ShopOpen) {
 			if (!shop.isVisible()) {
-				shop.setVisible(true);
-				Core.game.getWindow().getFrame().setVisible(false);
+				//shop.setVisible(true);
+				//Core.game.getWindow().getFrame().setVisible(false);
 			}
 		} else {
 			if (shop.isVisible()) {
-				shop.setVisible(false);
-				Core.game.getWindow().getFrame().setVisible(true);
+				//shop.setVisible(false);
+				//Core.game.getWindow().getFrame().setVisible(true);
 			}
 		}
 	}
