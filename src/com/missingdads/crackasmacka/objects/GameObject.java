@@ -13,12 +13,13 @@ public abstract class GameObject {
 	protected int x, y;
 	protected UUID uniqueId;
 	protected int velX, velY;
+	private long startTime;
 
 	public GameObject(int x, int y) {
-
 		this.x = x;
 		this.y = y;
 		this.uniqueId = UUID.randomUUID();
+		this.startTime = System.currentTimeMillis();
 
 		OBJECTS.add(this);
 	}
@@ -34,48 +35,43 @@ public abstract class GameObject {
 	}
 
 	public void setX(int x) {
-
 		this.x = x;
 	}
 
 	public void setY(int y) {
-
 		this.y = y;
 	}
 
 	public int getX() {
-
 		return x;
 	}
 
 	public int getY() {
-
 		return y;
 	}
 
 	public UUID getUniqueId() {
-
 		return uniqueId;
 	}
 
 	public void setVelX(int velX) {
-
 		this.velX = velX;
 	}
 
 	public void setVelY(int velY) {
-
 		this.velY = velY;
 	}
 
 	public int getVelX() {
-
 		return velX;
 	}
 
 	public int getVelY() {
-
 		return velY;
+	}
+
+	public long getStartTime() {
+		return startTime;
 	}
 
 	public static List<GameObject> getObjects() {
