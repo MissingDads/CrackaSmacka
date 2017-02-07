@@ -3,28 +3,19 @@ package com.missingdads.crackasmacka.objects;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import java.util.Random;
-
-import com.missingdads.crackasmacka.Core;
 
 public class Cracker extends GameObject {
 
-	private static int totalCrackers;
+	// private static int totalCrackers;
 
 	public Cracker(int x, int y) {
 		super(x, y);
-		totalCrackers++;
+		// totalCrackers++;
 
-		this.setVelY((int) (Math.sqrt(totalCrackers)));
+		this.setDuration(2000);
 	}
 
 	public void tick() {
-		this.setY(getY() + getVelY());
-
-		if (getY() > Core.HEIGHT) {
-			remove();
-			new Cracker(new Random().nextInt(Core.WIDTH), 0);
-		}
 	}
 
 	public void render(Graphics g) {

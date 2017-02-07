@@ -35,7 +35,7 @@ public class Core extends Canvas implements Runnable {
 		this.userData = new UserData();
 
 		int x = new Random().nextInt(WIDTH);
-		int y = 0;
+		int y = new Random().nextInt(HEIGHT);
 		new Cracker(x, y);
 
 	}
@@ -71,6 +71,7 @@ public class Core extends Canvas implements Runnable {
 			while (delta >= 1) {
 
 				tick();
+				GameObject.checkReversions(); // Check object revert times
 				delta--;
 			}
 			if (running)
@@ -90,7 +91,6 @@ public class Core extends Canvas implements Runnable {
 	private void tick() {
 		for (GameObject object : GameObject.getObjects()) {
 			object.tick();
-			System.out.println(ShopOpen);
 		}
 	}
 
@@ -122,11 +122,11 @@ public class Core extends Canvas implements Runnable {
 	public Window getWindow() {
 		return window;
 	}
-	
+
 	public Shop getShop() {
 		return shop;
 	}
-	
+
 	public UserData getUserData() {
 		return userData;
 	}
